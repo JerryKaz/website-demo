@@ -485,9 +485,9 @@ function createWhatsAppMessage(name, phone, car, issue, location) {
     return message;
 }
 
-// Send to WhatsApp with improved error handling
+// Send to WhatsApp with improved error handling - UPDATED NUMBER
 async function sendToWhatsApp(message) {
-    const whatsappNumber = '+233573961829';
+    const whatsappNumber = '+233535839140'; // UPDATED NUMBER
     const encodedMessage = encodeURIComponent(message);
     
     // Try different URL formats
@@ -530,21 +530,21 @@ function tryWhatsAppUrl(url) {
     });
 }
 
-// Fallback to clipboard
+// Fallback to clipboard - UPDATED NUMBER
 async function fallbackToClipboard(message) {
     try {
         await navigator.clipboard.writeText(message);
         showToast('✅ Message copied to clipboard! Opening WhatsApp...', 'success');
         
-        // Try to open WhatsApp
+        // Try to open WhatsApp with updated number
         setTimeout(() => {
-            window.open('https://wa.me/+233573961829', '_blank');
+            window.open('https://wa.me/+233535839140', '_blank');
         }, 1000);
         
         showSuccessModal();
         resetForm();
     } catch (err) {
-        showToast('📋 Please copy this message manually and send to +233573961829 on WhatsApp', 'warning');
+        showToast('📋 Please copy this message manually and send to +233535839140 on WhatsApp', 'warning');
         console.log('Message to copy:', message);
     }
 }
@@ -619,6 +619,7 @@ function getIssueText(issueValue) {
         'engine': '🔥 Engine Won\'t Start',
         'keys': '🔑 Locked Out',
         'fuel': '⛽ Out of Fuel',
+        'aircon': '❄️ Air Condition Failure',
         'other': '❓ Other Issue'
     };
     return issues[issueValue] || issueValue;
@@ -675,7 +676,7 @@ function animateCounters() {
     });
 }
 
-// Animate WhatsApp float
+// Animate WhatsApp float - UPDATED NUMBER
 function animateWhatsAppFloat() {
     if (elements.whatsappFloat) {
         elements.whatsappFloat.style.animation = 'none';
@@ -685,13 +686,12 @@ function animateWhatsAppFloat() {
     }
 }
 
-// Testimonial Slider Functionality
+// Testimonial Slider Functionality - FIXED for 4 testimonials
 function initTestimonialSlider() {
-    const sliderTrack = document.querySelector('.slider-track');
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-    const dots = document.querySelectorAll('.dot');
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
     
     if (!testimonialCards.length) return;
     
@@ -699,18 +699,13 @@ function initTestimonialSlider() {
     const totalSlides = testimonialCards.length;
     
     function updateSlider() {
-        // Update slider track
-        if (sliderTrack) {
-            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-        
-        // Update cards
-        testimonialCards.forEach((card, index) => {
+        // Hide all testimonials
+        testimonialCards.forEach(card => {
             card.classList.remove('active');
-            if (index === currentSlide) {
-                card.classList.add('active');
-            }
         });
+        
+        // Show current testimonial
+        testimonialCards[currentSlide].classList.add('active');
         
         // Update dots
         dots.forEach((dot, index) => {
@@ -719,20 +714,28 @@ function initTestimonialSlider() {
                 dot.classList.add('active');
             }
         });
+        
+        // Add animation
+        testimonialCards[currentSlide].style.animation = 'fadeIn 0.5s ease';
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+        resetAutoSlide();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+        resetAutoSlide();
     }
     
     // Event listeners for buttons
-    prevBtn?.addEventListener('click', () => {
-        currentSlide = currentSlide > 0 ? currentSlide - 1 : totalSlides - 1;
-        updateSlider();
-        resetAutoSlide();
-    });
-    
-    nextBtn?.addEventListener('click', () => {
-        currentSlide = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0;
-        updateSlider();
-        resetAutoSlide();
-    });
+    prevBtn?.addEventListener('click', prevSlide);
+    nextBtn?.addEventListener('click', nextSlide);
     
     // Dot navigation
     dots.forEach((dot, index) => {
@@ -745,10 +748,7 @@ function initTestimonialSlider() {
     
     // Auto-slide
     function startAutoSlide() {
-        slideInterval = setInterval(() => {
-            currentSlide = currentSlide < totalSlides - 1 ? currentSlide + 1 : 0;
-            updateSlider();
-        }, 5000);
+        slideInterval = setInterval(nextSlide, 5000);
     }
     
     function resetAutoSlide() {
@@ -759,12 +759,13 @@ function initTestimonialSlider() {
     }
     
     // Pause on hover
-    if (sliderTrack) {
-        sliderTrack.addEventListener('mouseenter', () => {
+    const sliderContainer = document.querySelector('.testimonial-slider');
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', () => {
             if (slideInterval) clearInterval(slideInterval);
         });
         
-        sliderTrack.addEventListener('mouseleave', startAutoSlide);
+        sliderContainer.addEventListener('mouseleave', startAutoSlide);
     }
     
     // Initialize
@@ -869,11 +870,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // WhatsApp float button
+    // WhatsApp float button - UPDATED NUMBER
     elements.whatsappFloat?.addEventListener('click', function(e) {
         e.preventDefault();
         const testMsg = encodeURIComponent("Hello! I need assistance with my vehicle.");
-        const url = `https://wa.me/+233573961829?text=${testMsg}`;
+        const url = `https://wa.me/+233535839140?text=${testMsg}`;
         openInNewTab(url);
     });
     
@@ -920,12 +921,24 @@ function validateStep2() {
     return carValid && issueValid;
 }
 
+// Scroll to form function (used in hero button)
+function scrollToForm() {
+    const formSection = document.getElementById('formSection');
+    if (formSection) {
+        window.scrollTo({
+            top: formSection.offsetTop - 80,
+            behavior: 'smooth'
+        });
+    }
+}
+
 // Export for debugging
 window.BSAutoConnect = {
     getCurrentLocation,
     resetForm,
     testWhatsApp: () => sendToWhatsApp("Test message from BS Auto-connect"),
-    getStoredRequests: () => JSON.parse(localStorage.getItem('bsautoconnect_requests') || '[]')
+    getStoredRequests: () => JSON.parse(localStorage.getItem('bsautoconnect_requests') || '[]'),
+    scrollToForm
 };
 
 // Add CSS animations
@@ -944,6 +957,16 @@ style.textContent = `
     @keyframes float {
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slide-up {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
     }
     
     .toast {
@@ -979,6 +1002,69 @@ style.textContent = `
     @keyframes pulse {
         0%, 100% { opacity: 0.4; transform: scale(0.8); }
         50% { opacity: 1; transform: scale(1); }
+    }
+    
+    /* Testimonial card styles */
+    .testimonial-card {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    
+    .testimonial-card.active {
+        display: block;
+        opacity: 1;
+    }
+    
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .dot.active {
+        background: #4CAF50;
+        transform: scale(1.2);
+    }
+    
+    .dot:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+    
+    .slider-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .slider-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .slider-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+    }
+    
+    /* Mobile overlay */
+    .mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 `;
 document.head.appendChild(style);
