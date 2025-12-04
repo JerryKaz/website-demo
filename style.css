@@ -64,6 +64,11 @@
   to { transform: translateX(0); }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--darker);
@@ -1419,7 +1424,7 @@ body {
   animation: spin 20s infinite linear;
 }
 
-/* Testimonials Section */
+/* Testimonials Section - UPDATED */
 .testimonials {
   padding: 120px 0;
   background: rgba(10, 10, 20, 0.7);
@@ -1432,11 +1437,12 @@ body {
   position: relative;
 }
 
+/* FIXED: Slider track now properly shows one testimonial at a time */
 .slider-track {
-  display: grid;
-  grid-template-columns: repeat(4, 100%);
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+  display: block;
+  position: relative;
+  height: 400px;
+  overflow: hidden;
 }
 
 .testimonial-card {
@@ -1445,16 +1451,23 @@ body {
   padding: 40px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s;
-  opacity: 0.5;
-  transform: scale(0.9);
-  margin: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
 }
 
 .testimonial-card.active {
   opacity: 1;
-  transform: scale(1);
+  transform: translateY(0);
+  display: block;
   border-color: var(--primary);
   box-shadow: 0 20px 40px rgba(0, 255, 198, 0.1);
+  animation: fadeIn 0.5s ease-out;
 }
 
 .testimonial-header {
@@ -1498,6 +1511,7 @@ body {
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 25px;
   font-style: italic;
+  min-height: 120px;
 }
 
 .testimonial-meta {
@@ -1562,6 +1576,10 @@ body {
 .dot.active {
   background: var(--primary);
   transform: scale(1.2);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* Stats Bar */
@@ -1741,6 +1759,41 @@ body {
   display: none !important;
 }
 
+/* Address display */
+.address.small {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary);
+}
+
+/* Toast notifications */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  background: var(--success);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  animation: slide-in 0.3s ease;
+  font-weight: 500;
+  max-width: 350px;
+}
+
+.toast-warning {
+  background: var(--warning);
+}
+
+.toast-success {
+  background: var(--success);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .hero .container {
@@ -1783,6 +1836,19 @@ body {
   
   .mobile-menu-btn {
     display: flex;
+  }
+  
+  /* Testimonials responsive */
+  .testimonial-slider {
+    max-width: 90%;
+  }
+  
+  .slider-track {
+    height: 450px;
+  }
+  
+  .testimonial-text {
+    min-height: 140px;
   }
 }
 
@@ -1856,5 +1922,97 @@ body {
   .mobile-nav-link {
     padding: 18px;
     font-size: 1rem;
+  }
+  
+  /* Testimonials mobile */
+  .testimonial-slider {
+    margin: 40px auto;
+  }
+  
+  .slider-track {
+    height: 500px;
+  }
+  
+  .testimonial-card {
+    padding: 25px;
+  }
+  
+  .testimonial-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .testimonial-text {
+    font-size: 1rem;
+    min-height: 160px;
+  }
+  
+  .testimonial-meta {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .slider-controls {
+    gap: 20px;
+  }
+  
+  .slider-btn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .timeline-content {
+    padding: 25px;
+  }
+  
+  .timeline-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+  
+  .testimonial-slider {
+    margin: 30px auto;
+  }
+  
+  .slider-track {
+    height: 550px;
+  }
+  
+  .testimonial-text {
+    min-height: 200px;
+  }
+  
+  .stats-bar {
+    padding: 25px;
+  }
+  
+  .stat-number {
+    font-size: 2.2rem;
   }
 }
