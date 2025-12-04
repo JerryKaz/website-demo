@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> BS Auto-connect | AI-Powered Roadside Assistance</title>
+  <title>BS Auto-connect | AI-Powered Roadside Assistance</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 
   <!-- Background Glow Elements -->
   <div class="glow-circle glow-1"></div>
@@ -23,12 +22,62 @@
         <i class="fas fa-car-crash"></i>
         <span class="logo-text">BS Auto-<span class="logo-accent">connect</span></span>
       </div>
+      
+      <!-- Desktop Navigation -->
       <nav class="nav">
         <a href="#how">How It Works</a>
         <a href="#features">Features</a>
-        <a href="#testimonials">Testimonials</a>   
+        <a href="#testimonials">Testimonials</a>
+        <button class="nav-cta">Mechanic Login</button>
       </nav>
-
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <!-- Mobile Dropdown Menu -->
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+          <span class="mobile-logo">BS Auto-connect</span>
+          <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="mobile-nav-links">
+          <a href="#how" class="mobile-nav-link">
+            <i class="fas fa-play-circle"></i>
+            How It Works
+          </a>
+          <a href="#features" class="mobile-nav-link">
+            <i class="fas fa-star"></i>
+            Features
+          </a>
+          <a href="#testimonials" class="mobile-nav-link">
+            <i class="fas fa-comment-dots"></i>
+            Testimonials
+          </a>
+          <a href="#formSection" class="mobile-nav-link">
+            <i class="fas fa-bolt"></i>
+            Emergency Request
+          </a>
+          <button class="mobile-nav-cta">
+            <i class="fas fa-user-hard-hat"></i>
+            Mechanic Login
+          </button>
+        </div>
+        <div class="mobile-nav-footer">
+          <a href="tel:+233573961829" class="mobile-contact">
+            <i class="fas fa-phone"></i>
+            +233 573 961 829
+          </a>
+          <div class="mobile-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -87,317 +136,6 @@
     </div>
   </section>
 
-
-<!-- Add these sections after the existing form section -->
-
-<!-- How It Works Section -->
-<section id="how" class="how-it-works">
-  <div class="container">
-    <h2 class="section-title">
-      <span class="title-number">03</span>
-      How It Works
-    </h2>
-    
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-number">01</div>
-        <div class="timeline-content">
-          <div class="timeline-icon">
-            <i class="fas fa-comment-dots"></i>
-          </div>
-          <h3>Submit Request</h3>
-          <p>Describe your vehicle issue in 30 seconds. Our AI analyzes your situation and matches you with the best mechanic.</p>
-        </div>
-      </div>
-      
-      <div class="timeline-item reverse">
-        <div class="timeline-number">02</div>
-        <div class="timeline-content">
-          <div class="timeline-icon">
-            <i class="fas fa-satellite-dish"></i>
-          </div>
-          <h3>Live Location Sharing</h3>
-          <p>Share your exact GPS location with one tap. Mechanics see you on the map and calculate the fastest route.</p>
-        </div>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-number">03</div>
-        <div class="timeline-content">
-          <div class="timeline-icon">
-            <i class="fas fa-user-hard-hat"></i>
-          </div>
-          <h3>Mechanic Dispatched</h3>
-          <p>Nearest available mechanic accepts your request. You get their profile, ETA, and real-time tracking.</p>
-        </div>
-      </div>
-      
-      <div class="timeline-item reverse">
-        <div class="timeline-number">04</div>
-        <div class="timeline-content">
-          <div class="timeline-icon">
-            <i class="fas fa-tools"></i>
-          </div>
-          <h3>Get Help & Pay</h3>
-          <p>Mechanic arrives and fixes the issue. Pay securely via WhatsApp. Rate your experience.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="process-visual">
-      <div class="process-circle">
-        <div class="process-step" style="--step:1">
-          <div class="step-dot"></div>
-          <span class="step-label">Request</span>
-        </div>
-        <div class="process-step" style="--step:2">
-          <div class="step-dot"></div>
-          <span class="step-label">Location</span>
-        </div>
-        <div class="process-step" style="--step:3">
-          <div class="step-dot"></div>
-          <span class="step-label">Dispatch</span>
-        </div>
-        <div class="process-step" style="--step:4">
-          <div class="step-dot"></div>
-          <span class="step-label">Complete</span>
-        </div>
-        <div class="process-line"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Features Section -->
-<section id="features" class="features">
-  <div class="container">
-    <h2 class="section-title">
-      <span class="title-number">04</span>
-      Premium Features
-    </h2>
-    
-    <div class="features-grid">
-      <div class="feature-card glass">
-        <div class="feature-icon">
-          <i class="fas fa-bolt"></i>
-        </div>
-        <h3>60-Second Dispatch</h3>
-        <p>AI matches you with nearest mechanic in under a minute. Average response time: 42 seconds.</p>
-        <div class="feature-stats">
-          <span class="stat"><i class="fas fa-clock"></i> &lt;42s </span>
-        </div>
-      </div>
-      
-      <div class="feature-card glass">
-        <div class="feature-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <h3>Verified Network</h3>
-        <p>All mechanics are certified, background-checked, and rated 4.8+ stars. Your safety comes first.</p>
-        <div class="feature-stats">
-          <span class="stat"><i class="fas fa-star"></i> 4.8/5</span>
-        </div>
-      </div>
-      
-      <div class="feature-card glass">
-        <div class="feature-icon">
-          <i class="fas fa-map-marker-alt"></i>
-        </div>
-        <h3>Live GPS Tracking</h3>
-        <p>Watch your mechanic approach in real-time. No more guessing when help will arrive.</p>
-        <div class="feature-stats">
-          <span class="stat"><i class="fas fa-crosshairs"></i> ±3m accuracy</span>
-        </div>
-      </div>
-      
-      <div class="feature-card glass">
-        <div class="feature-icon">
-          <i class="fas fa-money-bill-wave"></i>
-        </div>
-        <h3>Transparent Pricing</h3>
-        <p>Get upfront quotes before approval. No hidden fees. Pay securely via WhatsApp or card.</p>
-        <div class="feature-stats">
-          <span class="stat"><i class="fas fa-percent"></i> 30% avg. savings</span>
-        </div>
-      </div>
-      
-      <div class="feature-card glass">
-        <div class="feature-icon">
-          <i class="fas fa-headset"></i>
-        </div>
-        <h3>24/7 AI Support</h3>
-        <p>Round-the-clock assistance with AI chatbot and human backup. Never stranded alone.</p>
-        <div class="feature-stats">
-          <span class="stat"><i class="fas fa-robot"></i> AI + Human</span>
-        </div>
-      </div>
-      
-      <div class="feature-card glass">
-        <div class="feature-icon">
-          <i class="fas fa-battery-full"></i>
-        </div>
-        <h3>EV Ready</h3>
-        <p>Specialized support for electric vehicles. Trained mechanics with proper equipment.</p>
-        <div class="feature-stats">
-          <span class="stat"><i class="fas fa-charging-station"></i> EV Support</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials Section -->
-<section id="testimonials" class="testimonials">
-  <div class="container">
-    <h2 class="section-title">
-      <span class="title-number">05</span>
-      Driver Stories
-    </h2>
-    
-    <div class="testimonial-slider">
-      <div class="slider-track">
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card active">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1494790108755-2616b786d4d9?w=150&h=150&fit=crop&crop=face" alt="Sarah" class="avatar">
-            <div class="user-info">
-              <h4>Sarah M.</h4>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <span class="location"><i class="fas fa-map-marker-alt"></i> New York</span>
-            </div>
-          </div>
-          <p class="testimonial-text">
-            "Flat tire at midnight on the highway. QuickFix had a mechanic to me in 18 minutes. The live tracking was incredible - I could see him getting closer!"
-          </p>
-          <div class="testimonial-meta">
-            <span class="issue"><i class="fas fa-exclamation-circle"></i> Flat Tire</span>
-            <span class="time"><i class="fas fa-clock"></i> 18min arrival</span>
-          </div>
-        </div>
-        
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="James" class="avatar">
-            <div class="user-info">
-              <h4>James K.</h4>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <span class="location"><i class="fas fa-map-marker-alt"></i> Chicago</span>
-            </div>
-          </div>
-          <p class="testimonial-text">
-            "Dead battery in a parking garage with no service. Somehow the app worked! The mechanic even had the exact battery for my Tesla."
-          </p>
-          <div class="testimonial-meta">
-            <span class="issue"><i class="fas fa-car-battery"></i> Dead Battery</span>
-            <span class="time"><i class="fas fa-clock"></i> 22min arrival</span>
-          </div>
-        </div>
-        
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" alt="Maria" class="avatar">
-            <div class="user-info">
-              <h4>Maria L.</h4>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-              </div>
-              <span class="location"><i class="fas fa-map-marker-alt"></i> Los Angeles</span>
-            </div>
-          </div>
-          <p class="testimonial-text">
-            "Locked my keys in the car with my baby inside. The panic! QuickFix had someone there in 12 minutes. Lifesavers."
-          </p>
-          <div class="testimonial-meta">
-            <span class="issue"><i class="fas fa-key"></i> Locked Out</span>
-            <span class="time"><i class="fas fa-clock"></i> 12min arrival</span>
-          </div>
-        </div>
-        
-        <!-- Testimonial 4 -->
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="David" class="avatar">
-            <div class="user-info">
-              <h4>David R.</h4>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <span class="location"><i class="fas fa-map-marker-alt"></i> Miami</span>
-            </div>
-          </div>
-          <p class="testimonial-text">
-            "Out of gas on the interstate. The location sharing was perfect - mechanic found me in the dark. Price was half what AAA quoted."
-          </p>
-          <div class="testimonial-meta">
-            <span class="issue"><i class="fas fa-gas-pump"></i> Out of Fuel</span>
-            <span class="time"><i class="fas fa-clock"></i> 25min arrival</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="slider-controls">
-        <button class="slider-btn prev-btn">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="slider-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <button class="slider-btn next-btn">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-    
-    <div class="stats-bar">
-      <div class="stat-item">
-        <div class="stat-number">5,000+</div>
-        <div class="stat-label">Rescues Completed</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-number">4.8</div>
-        <div class="stat-label">Average Rating</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-number">14min</div>
-        <div class="stat-label">Avg. Response Time</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <div class="stat-number">98%</div>
-        <div class="stat-label">Satisfaction Rate</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
   <!-- Request Form Section -->
   <section id="formSection" class="form-section">
     <div class="container">
@@ -441,7 +179,15 @@
             <div class="input-line"></div>
           </div>
           
-          
+          <!-- ADDED PHONE INPUT -->
+          <div class="input-group futuristic-input">
+            <label for="phone">
+              <i class="fas fa-mobile-alt"></i>
+              Phone Number (WhatsApp)
+            </label>
+            <input type="tel" id="phone" placeholder="+233 XXX XXX XXX" required>
+            <div class="input-line"></div>
+          </div>
           
           <button type="button" class="next-step" onclick="nextStep(2)">
             Continue
@@ -604,34 +350,284 @@
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="features">
+  <!-- REMOVE THIS DUPLICATE FEATURES SECTION (lines 239-260 in your original) -->
+  
+  <!-- How It Works Section -->
+  <section id="how" class="how-it-works">
     <div class="container">
       <h2 class="section-title">
         <span class="title-number">02</span>
-        Why Choose QuickFix
+        How It Works
       </h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-number">01</div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-comment-dots"></i>
+            </div>
+            <h3>Submit Request</h3>
+            <p>Describe your vehicle issue in 30 seconds. Our AI analyzes your situation and matches you with the best mechanic.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item reverse">
+          <div class="timeline-number">02</div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-satellite-dish"></i>
+            </div>
+            <h3>Live Location Sharing</h3>
+            <p>Share your exact GPS location with one tap. Mechanics see you on the map and calculate the fastest route.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-number">03</div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-user-hard-hat"></i>
+            </div>
+            <h3>Mechanic Dispatched</h3>
+            <p>Nearest available mechanic accepts your request. You get their profile, ETA, and real-time tracking.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item reverse">
+          <div class="timeline-number">04</div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Get Help & Pay</h3>
+            <p>Mechanic arrives and fixes the issue. Pay securely via WhatsApp. Rate your experience.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="process-visual">
+        <div class="process-circle">
+          <div class="process-step" style="--step:1">
+            <div class="step-dot"></div>
+            <span class="step-label">Request</span>
+          </div>
+          <div class="process-step" style="--step:2">
+            <div class="step-dot"></div>
+            <span class="step-label">Location</span>
+          </div>
+          <div class="process-step" style="--step:3">
+            <div class="step-dot"></div>
+            <span class="step-label">Dispatch</span>
+          </div>
+          <div class="process-step" style="--step:4">
+            <div class="step-dot"></div>
+            <span class="step-label">Complete</span>
+          </div>
+          <div class="process-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-number">03</span>
+        Premium Features
+      </h2>
+      
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card glass">
           <div class="feature-icon">
             <i class="fas fa-bolt"></i>
           </div>
-          <h3>Instant Dispatch</h3>
-          <p>AI matches you with the nearest available mechanic in under 60 seconds.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-satellite-dish"></i>
+          <h3>60-Second Dispatch</h3>
+          <p>AI matches you with nearest mechanic in under a minute. Average response time: 42 seconds.</p>
+          <div class="feature-stats">
+            <span class="stat"><i class="fas fa-clock"></i> &lt;42s</span>
           </div>
-          <h3>Live Tracking</h3>
-          <p>Watch your mechanic approach in real-time with GPS tracking.</p>
         </div>
-        <div class="feature-card">
+        
+        <div class="feature-card glass">
           <div class="feature-icon">
             <i class="fas fa-shield-alt"></i>
           </div>
-          <h3>Verified Mechanics</h3>
-          <p>All technicians are certified, background-checked, and rated.</p>
+          <h3>Verified Network</h3>
+          <p>All mechanics are certified, background-checked, and rated 4.8+ stars. Your safety comes first.</p>
+          <div class="feature-stats">
+            <span class="stat"><i class="fas fa-star"></i> 4.8/5</span>
+          </div>
+        </div>
+        
+        <div class="feature-card glass">
+          <div class="feature-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Live GPS Tracking</h3>
+          <p>Watch your mechanic approach in real-time. No more guessing when help will arrive.</p>
+          <div class="feature-stats">
+            <span class="stat"><i class="fas fa-crosshairs"></i> ±3m accuracy</span>
+          </div>
+        </div>
+        
+        <div class="feature-card glass">
+          <div class="feature-icon">
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+          <h3>Transparent Pricing</h3>
+          <p>Get upfront quotes before approval. No hidden fees. Pay securely via WhatsApp or card.</p>
+          <div class="feature-stats">
+            <span class="stat"><i class="fas fa-percent"></i> 30% avg. savings</span>
+          </div>
+        </div>
+        
+        <div class="feature-card glass">
+          <div class="feature-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>24/7 AI Support</h3>
+          <p>Round-the-clock assistance with AI chatbot and human backup. Never stranded alone.</p>
+          <div class="feature-stats">
+            <span class="stat"><i class="fas fa-robot"></i> AI + Human</span>
+          </div>
+        </div>
+        
+        <div class="feature-card glass">
+          <div class="feature-icon">
+            <i class="fas fa-battery-full"></i>
+          </div>
+          <h3>EV Ready</h3>
+          <p>Specialized support for electric vehicles. Trained mechanics with proper equipment.</p>
+          <div class="feature-stats">
+            <span class="stat"><i class="fas fa-charging-station"></i> EV Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-number">04</span>
+        Driver Stories
+      </h2>
+      
+      <div class="testimonial-slider">
+        <div class="slider-track">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card active">
+            <div class="testimonial-header">
+              <img src="https://images.unsplash.com/photo-1494790108755-2616b786d4d9?w=150&h=150&fit=crop&crop=face" alt="Sarah" class="avatar">
+              <div class="user-info">
+                <h4>Sarah M.</h4>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="location"><i class="fas fa-map-marker-alt"></i> New York</span>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "Flat tire at midnight on the highway. BS Auto-connect had a mechanic to me in 18 minutes. The live tracking was incredible!"
+            </p>
+            <div class="testimonial-meta">
+              <span class="issue"><i class="fas fa-exclamation-circle"></i> Flat Tire</span>
+              <span class="time"><i class="fas fa-clock"></i> 18min arrival</span>
+            </div>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="James" class="avatar">
+              <div class="user-info">
+                <h4>James K.</h4>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Chicago</span>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "Dead battery in a parking garage with no service. Somehow the app worked! The mechanic even had the exact battery."
+            </p>
+            <div class="testimonial-meta">
+              <span class="issue"><i class="fas fa-car-battery"></i> Dead Battery</span>
+              <span class="time"><i class="fas fa-clock"></i> 22min arrival</span>
+            </div>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" alt="Maria" class="avatar">
+              <div class="user-info">
+                <h4>Maria L.</h4>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Los Angeles</span>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "Locked my keys in the car with my baby inside. The panic! BS Auto-connect had someone there in 12 minutes. Lifesavers."
+            </p>
+            <div class="testimonial-meta">
+              <span class="issue"><i class="fas fa-key"></i> Locked Out</span>
+              <span class="time"><i class="fas fa-clock"></i> 12min arrival</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="slider-controls">
+          <button class="slider-btn prev-btn" title="Previous testimonial" aria-label="Previous testimonial">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="slider-btn next-btn" title="Next testimonial" aria-label="Next testimonial">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number">5,000+</div>
+          <div class="stat-label">Rescues Completed</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">4.8</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">14min</div>
+          <div class="stat-label">Avg. Response Time</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Satisfaction Rate</div>
         </div>
       </div>
     </div>
@@ -641,7 +637,7 @@
   <a href="https://wa.me/+233573961829" class="whatsapp-float" target="_blank" id="whatsappFloat">
     <div class="float-pulse"></div>
     <i class="fab fa-whatsapp"></i>
-    <span class="float-text">LiveSupport</span>
+    <span class="float-text">Live Support</span>
   </a>
 
   <!-- Success Modal -->
@@ -650,11 +646,9 @@
       <div class="modal-check">
         <i class="fas fa-check"></i>
       </div>
-
-
       <h2>Request Sent Successfully!</h2>
       <p>A mechanic has been notified and will contact you via WhatsApp within 2 minutes.</p>
-      <p class="modal-note">Please keep WhatsApp open to share your live location.</p>
+      <p class="modal-note">Please keep WhatsApp open to share your live location when asked.</p>
       <div class="modal-actions">
         <button onclick="closeModal()" class="modal-btn">Close</button>
         <a href="https://wa.me/+233573961829" target="_blank" class="modal-btn whatsapp-btn">
